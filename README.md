@@ -17,22 +17,21 @@ merge into one change; a change can still span sentences when the editors rewrot
 
 Each story then goes to the [OpenAI Decisions API](https://developers.openai.com/api/docs/guides/decisions)
 once, with the article, both texts and the list of changes. For every change the model picks
-one kind from `codebook.json` and gives two probabilities: that the change mixes several kinds,
-and that the AI text contradicted the article there. A change counts as "gemengd" when the
-first probability is at least 0.5, otherwise as "onzeker" when the model's confidence in the
-kind is under 0.6. "Contradicts article" counts changes with a probability of at least 0.7.
-These are the model's proposals, checked against an article that may be incomplete. The
-thresholds are provisional.
+one kind from `codebook.json` and gives the probability that the change mixes several kinds. A
+change counts as "gemengd" when that probability is at least 0.5, otherwise as "onzeker" when
+the model's confidence in the kind is under 0.6.
 
 The kinds come from `discover.py`. A text model described the changes in 60 stories sampled
 across the months and grouped them, and the owner approved the list.
 
-One editor then checked 39 other stories. In the 10 stories where they did not see the model's
-answer, they picked the same kind as the model for 6 of the 16 changes. That is too low, so the
-kinds in the table below are not reliable yet. The descriptions of the kinds are being sharpened
-and will be checked again on 25 new stories, all without the model's answer. The contradiction
-column is not reliable either. The model flagged 4 of the checked changes and the editor agreed
-with 1, while seeing the model's answer for 3 of those 4.
+One editor then checked other stories against the model. The goal, set beforehand: in stories
+where the editor does not see the model's answers, the editor agrees with at least 80% of the
+changes the model counts, and at most a quarter of the changes are onzeker. In the first round
+10 of the 40 stories were checked that way, and 6 of the 11 counted changes matched (55%). After
+the descriptions were sharpened, a second round of 25 stories, all checked that way, matched 31
+of 43 (72%). So the kinds in the table below are not reliable yet. A third round with sharper
+descriptions follows. The model also used to check whether the AI text contradicted the article;
+that check has been dropped.
 
 ## Kinds
 
@@ -52,19 +51,19 @@ Share of each kind among the labelled changes, per month. Rewritten stories are 
 changes.
 
 <!-- BEGIN:REPORT -->
-| Month | Stories | Rewritten | Changes | schrapping | aanvulling | inhoud | ordening | tijd | formulering | notatie | anders | gemengd | onzeker | Contradicts article (not reliable yet) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2026-11 | 148 | 14% | 196 | 5% | 26% | 12% | 1% | 9% | 12% | 1% | 0% | 15% | 21% | 9 |
-| 2026-10 | 221 | 14% | 241 | 10% | 28% | 11% | 0% | 9% | 15% | 1% | 0% | 8% | 18% | 13 |
-| 2026-09 | 215 | 14% | 213 | 11% | 26% | 10% | 2% | 8% | 14% | 2% | 0% | 9% | 18% | 7 |
-| 2026-08 | 171 | 12% | 111 | 11% | 24% | 11% | 2% | 6% | 12% | 0% | 0% | 14% | 20% | 19 |
-| 2026-07 | 193 | 17% | 157 | 13% | 24% | 8% | 1% | 10% | 18% | 1% | 0% | 10% | 15% | 10 |
-| 2026-06 | 206 | 10% | 198 | 11% | 20% | 18% | 2% | 11% | 18% | 1% | 0% | 8% | 13% | 15 |
-| 2026-05 | 215 | 10% | 199 | 14% | 22% | 10% | 0% | 10% | 20% | 2% | 0% | 7% | 17% | 18 |
-| 2026-04 | 217 | 27% | 171 | 14% | 16% | 6% | 2% | 8% | 16% | 4% | 0% | 13% | 21% | 16 |
-| 2026-03 | 228 | 90% | 52 | 21% | 6% | 10% | 6% | 2% | 2% | 6% | 0% | 29% | 19% | 7 |
-| 2026-02 | 181 | 53% | 244 | 21% | 5% | 4% | 7% | 2% | 9% | 9% | 0% | 21% | 21% | 13 |
-| 2026-01 | 176 | 31% | 351 | 21% | 7% | 4% | 6% | 2% | 9% | 8% | 0% | 24% | 18% | 19 |
+| Month | Stories | Rewritten | Changes | schrapping | aanvulling | inhoud | ordening | tijd | formulering | notatie | anders | gemengd | onzeker |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-11 | 148 | 14% | 196 | 5% | 26% | 12% | 1% | 9% | 12% | 1% | 0% | 15% | 21% |
+| 2026-10 | 221 | 14% | 241 | 10% | 28% | 11% | 0% | 9% | 15% | 1% | 0% | 8% | 18% |
+| 2026-09 | 215 | 14% | 213 | 11% | 26% | 10% | 2% | 8% | 14% | 2% | 0% | 9% | 18% |
+| 2026-08 | 171 | 12% | 111 | 11% | 24% | 11% | 2% | 6% | 12% | 0% | 0% | 14% | 20% |
+| 2026-07 | 193 | 17% | 157 | 13% | 24% | 8% | 1% | 10% | 18% | 1% | 0% | 10% | 15% |
+| 2026-06 | 206 | 10% | 198 | 11% | 20% | 18% | 2% | 11% | 18% | 1% | 0% | 8% | 13% |
+| 2026-05 | 215 | 10% | 199 | 14% | 22% | 10% | 0% | 10% | 20% | 2% | 0% | 7% | 17% |
+| 2026-04 | 217 | 27% | 171 | 14% | 16% | 6% | 2% | 8% | 16% | 4% | 0% | 13% | 21% |
+| 2026-03 | 228 | 90% | 52 | 21% | 6% | 10% | 6% | 2% | 2% | 6% | 0% | 29% | 19% |
+| 2026-02 | 181 | 53% | 244 | 21% | 5% | 4% | 7% | 2% | 9% | 9% | 0% | 21% | 21% |
+| 2026-01 | 176 | 31% | 351 | 21% | 7% | 4% | 6% | 2% | 9% | 8% | 0% | 24% | 18% |
 <!-- END:REPORT -->
 
 ## Running

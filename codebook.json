@@ -10,6 +10,5 @@
     "notatie": "Alleen de schrijfwijze verandert: spelling, spaties, cijfers in plaats van woorden, leestekens of eenheden, met precies dezelfde waarde. Afronden ('2250' naar 'ruim 2000') is inhoud.",
     "anders": "Past bij geen van de andere soorten."
   },
-  "fout": "Wat de AI-tekst bij deze wijziging zei, is in strijd met het artikel, en de redactie heeft dat verbeterd of weggehaald.",
   "gemengd": "Bevat deze wijziging meer dan een soort aanpassing tegelijk, zoals een andere schrijfwijze en een weggehaalde zin?"
 }

@@ -2,8 +2,7 @@
 """Sort the editors' changes to the AI read-aloud texts by kind, per month, into report.json.
 
 Each changed story goes to the OpenAI Decisions API once: per change one choice over the kinds
-in codebook.json, a check whether the editors fixed something the article does not support,
-and a check whether the change mixes kinds. Only totals are written; texts stay private.
+in codebook.json and a check whether the change mixes kinds. Only totals are written; texts stay private.
 """
 
 import argparse
@@ -74,7 +73,7 @@ def decide(text, questions):
 
 
 def label(article, ai, final):
-    """Per change: (kind, sure, probability that the AI text contradicted the article, mixed)."""
+    """Per change: (kind, sure, mixed)."""
     a, b = ai.split(), final.split()
     spans = changes(a, b)
     lines = [f"{n}. [{' '.join(a[i1:i2]) or '(niets)'}] -> [{' '.join(b[j1:j2]) or '(niets)'}]"
@@ -87,8 +86,6 @@ def label(article, ai, final):
         questions += [
             {"type": "choice", "name": f"soort{n}", "choices": kinds,
              "instructions": f"Welke soort aanpassing is wijziging {n}?"},
-            {"type": "predicate", "name": f"fout{n}",
-             "instructions": f"Wijziging {n}: {CODEBOOK['fout']}"},
             {"type": "predicate", "name": f"gemengd{n}",
              "instructions": f"Wijziging {n}: {CODEBOOK['gemengd']}"},
         ]
@@ -97,9 +94,9 @@ def label(article, ai, final):
     ans = {x["name"]: x for x in decide(text, questions)}
     out = []
     for n in range(1, len(spans) + 1):
-        kind, fout_, mixed = ans.get(f"soort{n}", {}), ans.get(f"fout{n}", {}), ans.get(f"gemengd{n}", {})
+        kind, mixed = ans.get(f"soort{n}", {}), ans.get(f"gemengd{n}", {})
         out.append((kind.get("choice"), kind.get("confidence", 0) >= SURE,
-                    fout_.get("probability", 0.5), mixed.get("probability", 0) >= 0.5))
+                    mixed.get("probability", 0) >= 0.5))
     return out
 
 
@@ -125,12 +122,11 @@ def month_report(stories, articles):
             m["too_many_changes"] += 1
             continue
         seen = set()
-        for kind, sure, fout, mixed in result:
+        for kind, sure, mixed in result:
             m["changes"] += 1
             key = "gemengd" if mixed else kind if sure else "onzeker"
             kinds[key] += 1
             seen.add(key)
-            m["fout_ja" if fout >= 0.7 else "fout_onduidelijk" if fout > 0.3 else "fout_nee"] += 1
         with_kind.update(seen)
         m["labelled"] += 1
     return {**m, "kinds": dict(kinds), "stories_with_kind": dict(with_kind)}
@@ -139,13 +135,13 @@ def month_report(stories, articles):
 def write_table(report):
     """The README table: per month the share of each kind among the labelled changes."""
     kinds = [*CODEBOOK["kinds"], "gemengd", "onzeker"]
-    head = ["Month", "Stories", "Rewritten", "Changes", *kinds, "Contradicts article (not reliable yet)"]
+    head = ["Month", "Stories", "Rewritten", "Changes", *kinds]
     rows = ["| " + " | ".join(head) + " |", "|" + " --- |" * len(head)]
     for month, r in sorted(report.items(), reverse=True):
         n = r.get("changes", 0) or 1
         pct = [f"{100 * r['kinds'].get(k, 0) / n:.0f}%" for k in kinds]
         rows.append(f"| {month} | {r['stories']} | {100 * r.get('rewritten', 0) / r['stories']:.0f}% | "
-                    f"{r.get('changes', 0)} | " + " | ".join(pct) + f" | {r.get('fout_ja', 0)} |")
+                    f"{r.get('changes', 0)} | " + " | ".join(pct) + " |")
     readme = open("README.md").read()
     start, end = readme.index("<!-- BEGIN:REPORT -->"), readme.index("<!-- END:REPORT -->")
     table = "\n".join(rows)
