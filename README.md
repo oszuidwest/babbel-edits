@@ -29,21 +29,24 @@ where the editor does not see the model's answers, the editor agrees with at lea
 changes the model counts, and at most a quarter of the changes are onzeker. In the first round
 10 of the 40 stories were checked that way, and 6 of the 11 counted changes matched (55%). After
 the descriptions were sharpened, a second round of 25 stories, all checked that way, matched 31
-of 43 (72%). So the kinds in the table below are not reliable yet. A third round with sharper
-descriptions follows. The model also used to check whether the AI text contradicted the article;
-that check has been dropped.
+of 43 (72%), with 14% onzeker. That missed the goal, but the owner judged it good enough and
+stopped the checks. The descriptions were then sharpened once more with the editor's choices
+from the second round; that version was not checked again. Read the table as a rough picture of
+which kinds of changes are common, not as an exact count. The model also used to check whether
+the AI text contradicted the article; that check has been dropped.
 
 ## Kinds
 
 | Kind | Meaning |
 | --- | --- |
-| schrapping | Something is removed without anything taking its place. |
-| aanvulling | Information is added, or a reference becomes more concrete. |
-| inhoud | A statement is replaced by a different one, such as another number or outcome. |
+| schrapping | Something is removed without anything taking its place, such as a word like "waarschijnlijk" or a place name. |
+| aanvulling | Information is added, or a reference or time becomes more precise. |
+| inhoud | A statement is replaced by a different one, such as another outcome or a number that changes by more than rounding. |
 | ordening | The same information moves, for example a place name out of the opening. |
-| tijd | The tense or the time reference changes, such as a date that becomes "dit jaar". |
+| tijd | For the same event, the tense changes, or a time is put another way without becoming more precise, such as a date that becomes "dit jaar". |
 | formulering | Other words or grammar, with the same facts in the same place. |
-| notatie | Only the writing changes: spelling, digits, punctuation, units. |
+| notatie | Only the writing changes: spelling, digits, punctuation, units, abbreviations, or rounding so a number sounds better. |
+| anders | Does not fit any of the other kinds. |
 
 ## Results
 
@@ -53,17 +56,17 @@ changes.
 <!-- BEGIN:REPORT -->
 | Month | Stories | Rewritten | Changes | schrapping | aanvulling | inhoud | ordening | tijd | formulering | notatie | anders | gemengd | onzeker |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2026-11 | 148 | 14% | 196 | 5% | 26% | 12% | 1% | 9% | 12% | 1% | 0% | 15% | 21% |
-| 2026-10 | 221 | 14% | 241 | 10% | 28% | 11% | 0% | 9% | 15% | 1% | 0% | 8% | 18% |
-| 2026-09 | 215 | 14% | 213 | 11% | 26% | 10% | 2% | 8% | 14% | 2% | 0% | 9% | 18% |
-| 2026-08 | 171 | 12% | 111 | 11% | 24% | 11% | 2% | 6% | 12% | 0% | 0% | 14% | 20% |
-| 2026-07 | 193 | 17% | 157 | 13% | 24% | 8% | 1% | 10% | 18% | 1% | 0% | 10% | 15% |
-| 2026-06 | 206 | 10% | 198 | 11% | 20% | 18% | 2% | 11% | 18% | 1% | 0% | 8% | 13% |
-| 2026-05 | 215 | 10% | 199 | 14% | 22% | 10% | 0% | 10% | 20% | 2% | 0% | 7% | 17% |
-| 2026-04 | 217 | 27% | 171 | 14% | 16% | 6% | 2% | 8% | 16% | 4% | 0% | 13% | 21% |
-| 2026-03 | 228 | 90% | 52 | 21% | 6% | 10% | 6% | 2% | 2% | 6% | 0% | 29% | 19% |
-| 2026-02 | 181 | 53% | 244 | 21% | 5% | 4% | 7% | 2% | 9% | 9% | 0% | 21% | 21% |
-| 2026-01 | 176 | 31% | 351 | 21% | 7% | 4% | 6% | 2% | 9% | 8% | 0% | 24% | 18% |
+| 2026-11 | 148 | 14% | 196 | 7% | 29% | 10% | 0% | 7% | 6% | 5% | 0% | 15% | 22% |
+| 2026-10 | 221 | 14% | 241 | 11% | 27% | 7% | 0% | 7% | 8% | 3% | 0% | 8% | 28% |
+| 2026-09 | 215 | 14% | 213 | 13% | 25% | 8% | 0% | 8% | 7% | 5% | 0% | 9% | 25% |
+| 2026-08 | 171 | 12% | 111 | 12% | 29% | 7% | 2% | 1% | 7% | 1% | 0% | 14% | 27% |
+| 2026-07 | 193 | 17% | 157 | 13% | 25% | 6% | 1% | 8% | 14% | 2% | 0% | 10% | 19% |
+| 2026-06 | 206 | 10% | 198 | 13% | 22% | 13% | 1% | 8% | 10% | 3% | 0% | 8% | 24% |
+| 2026-05 | 215 | 10% | 199 | 16% | 23% | 11% | 0% | 7% | 11% | 3% | 0% | 7% | 24% |
+| 2026-04 | 217 | 27% | 171 | 16% | 16% | 6% | 2% | 4% | 12% | 5% | 0% | 13% | 27% |
+| 2026-03 | 228 | 90% | 52 | 19% | 4% | 8% | 2% | 2% | 4% | 6% | 0% | 29% | 27% |
+| 2026-02 | 181 | 53% | 244 | 23% | 5% | 5% | 5% | 2% | 4% | 9% | 0% | 21% | 25% |
+| 2026-01 | 176 | 31% | 351 | 22% | 6% | 3% | 7% | 1% | 4% | 8% | 0% | 24% | 24% |
 <!-- END:REPORT -->
 
 ## Running
