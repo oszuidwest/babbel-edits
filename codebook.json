@@ -1,13 +1,13 @@
 {
-  "version": 1,
+  "version": 3,
   "kinds": {
-    "schrapping": "Een detail, bijzin, zin of lijstonderdeel verdwijnt, zonder dat er op die plek andere informatie voor in de plaats komt.",
-    "aanvulling": "Er komt informatie bij, of een bestaande verwijzing wordt concreter, zonder dat een eerdere bewering wordt tegengesproken of vervangen.",
-    "inhoud": "Een bewering wordt vervangen door een andere: de handeling, de omvang, de zekerheid, wie iets zegt of de uitkomst verandert. Ook een getal of naam dat anders wordt.",
-    "ordening": "Informatie die blijft staat op een andere plek of wordt anders over zinnen verdeeld, zonder dat ze inhoudelijk verandert. Bijvoorbeeld een plaatsnaam die uit de opening verhuist.",
-    "tijd": "Bij dezelfde gebeurtenis verandert de werkwoordstijd of de aanduiding van wanneer iets gebeurt, bijvoorbeeld een datum die 'deze week' of 'dit jaar' wordt.",
+    "schrapping": "Een detail, bijzin, zin of lijstonderdeel verdwijnt, zonder dat er op die plek andere informatie voor in de plaats komt. Ook een voorbehoud als 'waarschijnlijk' dat wegvalt, een deel van een tijdsaanduiding ('in de zomer van 2027' wordt 'in de zomer') of een plaatsnaam die helemaal verdwijnt.",
+    "aanvulling": "Er komt informatie bij, of een bestaande verwijzing wordt concreter, zonder dat een eerdere bewering wordt tegengesproken of vervangen. Ook een tijdsaanduiding die preciezer wordt, zoals 'donderdag' die 'donderdagavond' wordt.",
+    "inhoud": "Een bewering wordt vervangen door een andere: de handeling, de omvang, wie iets zegt of de uitkomst verandert. Ook een getal of naam dat een andere waarde krijgt dan alleen een afronding. Alleen een voorbehoud weghalen is schrapping.",
+    "ordening": "Informatie die blijft staat op een andere plek of wordt anders over zinnen verdeeld, zonder dat ze inhoudelijk verandert. Bijvoorbeeld een plaatsnaam die uit de opening naar later in de zin verhuist, ook als de zin daardoor anders loopt. Verdwijnt de plaatsnaam helemaal, dan is het schrapping.",
+    "tijd": "Bij dezelfde gebeurtenis verandert de werkwoordstijd, ook als dat het enige is ('rijden' wordt 'reden', 'heeft gepakt' wordt 'pakte'). Of een tijdsaanduiding wordt anders uitgedrukt zonder preciezer te worden, zoals een datum of jaartal dat 'deze week' of 'volgend jaar' wordt. Wordt het tijdstip preciezer, dan is het aanvulling. Valt een deel van de tijdsaanduiding weg, dan is het schrapping.",
     "formulering": "Woorden, verwijswoorden of grammaticale vormen veranderen, terwijl de feiten, de tijd, de zinsindeling en de plaats van de informatie gelijk blijven.",
-    "notatie": "Alleen de schrijfwijze verandert: spelling, spaties, cijfers in plaats van woorden, leestekens of eenheden, met precies dezelfde waarde. Afronden ('2250' naar 'ruim 2000') is inhoud.",
+    "notatie": "Alleen de schrijfwijze verandert: spelling, spaties, samenstellingen aan elkaar, cijfers in plaats van woorden, leestekens, eenheden of een afkorting ('Gemeentelijke Gezondheidsdienst' wordt 'GGD'). Ook afronden naar een getal dat beter klinkt, zoals '16.52 uur' naar 'rond vijf uur' of '2250' naar 'ruim 2000'. Is het nieuwe getal geen afronding van het oude, dan is het inhoud.",
     "anders": "Past bij geen van de andere soorten."
   },
   "gemengd": "Bevat deze wijziging meer dan een soort aanpassing tegelijk, zoals een andere schrijfwijze en een weggehaalde zin?"
