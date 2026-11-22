@@ -139,7 +139,7 @@ def month_report(stories, articles):
 def write_table(report):
     """The README table: per month the share of each kind among the labelled changes."""
     kinds = [*CODEBOOK["kinds"], "gemengd", "onzeker"]
-    head = ["Month", "Stories", "Rewritten", "Changes", *kinds, "Contradicts article"]
+    head = ["Month", "Stories", "Rewritten", "Changes", *kinds, "Contradicts article (not reliable yet)"]
     rows = ["| " + " | ".join(head) + " |", "|" + " --- |" * len(head)]
     for month, r in sorted(report.items(), reverse=True):
         n = r.get("changes", 0) or 1

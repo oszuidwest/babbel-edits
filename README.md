@@ -25,9 +25,14 @@ These are the model's proposals, checked against an article that may be incomple
 thresholds are provisional.
 
 The kinds come from `discover.py`. A text model described the changes in 60 stories sampled
-across the months and grouped them, and the owner approved the list. One editor still has to
-check a sample of 40 stories. That check sets the thresholds; until then the numbers are
-provisional.
+across the months and grouped them, and the owner approved the list.
+
+One editor then checked 39 other stories. In the 10 stories where they did not see the model's
+answer, they picked the same kind as the model for 6 of the 16 changes. That is too low, so the
+kinds in the table below are not reliable yet. The descriptions of the kinds are being sharpened
+and will be checked again on 25 new stories, all without the model's answer. The contradiction
+column is not reliable either. The model flagged 4 of the checked changes and the editor agreed
+with 1, while seeing the model's answer for 3 of those 4.
 
 ## Kinds
 
@@ -47,7 +52,7 @@ Share of each kind among the labelled changes, per month. Rewritten stories are 
 changes.
 
 <!-- BEGIN:REPORT -->
-| Month | Stories | Rewritten | Changes | schrapping | aanvulling | inhoud | ordening | tijd | formulering | notatie | anders | gemengd | onzeker | Contradicts article |
+| Month | Stories | Rewritten | Changes | schrapping | aanvulling | inhoud | ordening | tijd | formulering | notatie | anders | gemengd | onzeker | Contradicts article (not reliable yet) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2026-11 | 148 | 14% | 196 | 5% | 26% | 12% | 1% | 9% | 12% | 1% | 0% | 15% | 21% | 9 |
 | 2026-10 | 221 | 14% | 241 | 10% | 28% | 11% | 0% | 9% | 15% | 1% | 0% | 8% | 18% | 13 |
