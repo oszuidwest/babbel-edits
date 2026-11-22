@@ -1,0 +1,348 @@
+{
+ "2026-01": {
+  "codebook": 1,
+  "stories": 176,
+  "changes": 351,
+  "fout_nee": 298,
+  "fout_onduidelijk": 34,
+  "fout_ja": 19,
+  "labelled": 112,
+  "rewritten": 55,
+  "kinds": {
+   "schrapping": 72,
+   "onzeker": 64,
+   "aanvulling": 26,
+   "tijd": 6,
+   "inhoud": 15,
+   "gemengd": 85,
+   "notatie": 28,
+   "formulering": 33,
+   "ordening": 22
+  },
+  "stories_with_kind": {
+   "tijd": 5,
+   "aanvulling": 21,
+   "inhoud": 14,
+   "schrapping": 56,
+   "onzeker": 50,
+   "notatie": 20,
+   "gemengd": 59,
+   "formulering": 30,
+   "ordening": 22
+  }
+ },
+ "2026-02": {
+  "codebook": 1,
+  "stories": 181,
+  "rewritten": 96,
+  "changes": 244,
+  "fout_ja": 13,
+  "fout_nee": 212,
+  "labelled": 75,
+  "fout_onduidelijk": 19,
+  "kinds": {
+   "inhoud": 10,
+   "schrapping": 51,
+   "ordening": 18,
+   "gemengd": 52,
+   "onzeker": 52,
+   "aanvulling": 12,
+   "notatie": 22,
+   "formulering": 23,
+   "tijd": 4
+  },
+  "stories_with_kind": {
+   "inhoud": 9,
+   "schrapping": 39,
+   "ordening": 17,
+   "gemengd": 39,
+   "aanvulling": 10,
+   "onzeker": 41,
+   "notatie": 17,
+   "formulering": 22,
+   "tijd": 4
+  }
+ },
+ "2026-03": {
+  "codebook": 1,
+  "stories": 228,
+  "rewritten": 205,
+  "changes": 52,
+  "fout_ja": 7,
+  "fout_nee": 41,
+  "labelled": 19,
+  "fout_onduidelijk": 4,
+  "kinds": {
+   "inhoud": 5,
+   "onzeker": 10,
+   "gemengd": 15,
+   "notatie": 3,
+   "aanvulling": 3,
+   "schrapping": 11,
+   "ordening": 3,
+   "formulering": 1,
+   "tijd": 1
+  },
+  "stories_with_kind": {
+   "inhoud": 5,
+   "gemengd": 10,
+   "onzeker": 8,
+   "notatie": 3,
+   "aanvulling": 2,
+   "schrapping": 7,
+   "ordening": 3,
+   "formulering": 1,
+   "tijd": 1
+  }
+ },
+ "2026-04": {
+  "codebook": 1,
+  "stories": 217,
+  "rewritten": 58,
+  "changes": 171,
+  "fout_nee": 142,
+  "labelled": 95,
+  "fout_onduidelijk": 13,
+  "fout_ja": 16,
+  "kinds": {
+   "formulering": 27,
+   "gemengd": 22,
+   "tijd": 13,
+   "schrapping": 24,
+   "notatie": 7,
+   "onzeker": 36,
+   "aanvulling": 27,
+   "ordening": 4,
+   "inhoud": 11
+  },
+  "stories_with_kind": {
+   "formulering": 24,
+   "gemengd": 18,
+   "tijd": 13,
+   "schrapping": 24,
+   "notatie": 7,
+   "aanvulling": 26,
+   "onzeker": 32,
+   "ordening": 3,
+   "inhoud": 11
+  }
+ },
+ "2026-05": {
+  "codebook": 1,
+  "stories": 215,
+  "rewritten": 21,
+  "changes": 199,
+  "fout_nee": 170,
+  "labelled": 115,
+  "fout_ja": 18,
+  "fout_onduidelijk": 11,
+  "kinds": {
+   "aanvulling": 43,
+   "onzeker": 34,
+   "inhoud": 19,
+   "gemengd": 14,
+   "formulering": 39,
+   "tijd": 19,
+   "schrapping": 27,
+   "notatie": 4
+  },
+  "stories_with_kind": {
+   "aanvulling": 40,
+   "inhoud": 19,
+   "gemengd": 13,
+   "onzeker": 28,
+   "formulering": 36,
+   "tijd": 18,
+   "schrapping": 24,
+   "notatie": 4
+  }
+ },
+ "2026-06": {
+  "codebook": 1,
+  "stories": 206,
+  "changes": 198,
+  "fout_ja": 15,
+  "labelled": 111,
+  "fout_nee": 172,
+  "rewritten": 21,
+  "fout_onduidelijk": 11,
+  "kinds": {
+   "inhoud": 35,
+   "aanvulling": 39,
+   "tijd": 21,
+   "onzeker": 25,
+   "notatie": 2,
+   "gemengd": 15,
+   "schrapping": 22,
+   "formulering": 36,
+   "ordening": 3
+  },
+  "stories_with_kind": {
+   "inhoud": 32,
+   "aanvulling": 34,
+   "tijd": 18,
+   "onzeker": 24,
+   "notatie": 2,
+   "gemengd": 15,
+   "schrapping": 20,
+   "formulering": 30,
+   "ordening": 3
+  }
+ },
+ "2026-07": {
+  "codebook": 1,
+  "stories": 193,
+  "rewritten": 32,
+  "changes": 157,
+  "fout_nee": 142,
+  "labelled": 100,
+  "fout_ja": 10,
+  "fout_onduidelijk": 5,
+  "kinds": {
+   "onzeker": 23,
+   "tijd": 15,
+   "aanvulling": 37,
+   "formulering": 29,
+   "gemengd": 16,
+   "ordening": 2,
+   "inhoud": 13,
+   "schrapping": 21,
+   "notatie": 1
+  },
+  "stories_with_kind": {
+   "onzeker": 20,
+   "tijd": 15,
+   "aanvulling": 34,
+   "formulering": 26,
+   "gemengd": 14,
+   "ordening": 2,
+   "inhoud": 12,
+   "schrapping": 21,
+   "notatie": 1
+  }
+ },
+ "2026-08": {
+  "codebook": 1,
+  "stories": 171,
+  "changes": 111,
+  "fout_nee": 83,
+  "labelled": 66,
+  "fout_ja": 19,
+  "fout_onduidelijk": 9,
+  "rewritten": 21,
+  "kinds": {
+   "aanvulling": 27,
+   "onzeker": 22,
+   "tijd": 7,
+   "inhoud": 12,
+   "schrapping": 12,
+   "formulering": 13,
+   "gemengd": 16,
+   "ordening": 2
+  },
+  "stories_with_kind": {
+   "aanvulling": 23,
+   "onzeker": 21,
+   "tijd": 6,
+   "inhoud": 12,
+   "schrapping": 10,
+   "formulering": 13,
+   "gemengd": 15,
+   "ordening": 2
+  }
+ },
+ "2026-09": {
+  "codebook": 1,
+  "stories": 215,
+  "changes": 213,
+  "fout_nee": 193,
+  "labelled": 107,
+  "rewritten": 30,
+  "fout_onduidelijk": 13,
+  "fout_ja": 7,
+  "kinds": {
+   "gemengd": 19,
+   "schrapping": 23,
+   "formulering": 30,
+   "aanvulling": 55,
+   "onzeker": 39,
+   "tijd": 16,
+   "inhoud": 22,
+   "ordening": 5,
+   "notatie": 4
+  },
+  "stories_with_kind": {
+   "gemengd": 17,
+   "schrapping": 22,
+   "formulering": 27,
+   "aanvulling": 47,
+   "onzeker": 33,
+   "tijd": 14,
+   "inhoud": 22,
+   "ordening": 5,
+   "notatie": 4
+  }
+ },
+ "2026-10": {
+  "codebook": 1,
+  "stories": 221,
+  "changes": 241,
+  "fout_nee": 215,
+  "labelled": 115,
+  "rewritten": 31,
+  "fout_ja": 13,
+  "fout_onduidelijk": 13,
+  "kinds": {
+   "tijd": 21,
+   "aanvulling": 68,
+   "schrapping": 23,
+   "gemengd": 20,
+   "inhoud": 27,
+   "onzeker": 43,
+   "formulering": 36,
+   "notatie": 3
+  },
+  "stories_with_kind": {
+   "aanvulling": 56,
+   "tijd": 17,
+   "schrapping": 21,
+   "inhoud": 22,
+   "gemengd": 16,
+   "onzeker": 39,
+   "formulering": 32,
+   "notatie": 3
+  }
+ },
+ "2026-11": {
+  "codebook": 1,
+  "stories": 148,
+  "changes": 196,
+  "fout_nee": 174,
+  "labelled": 95,
+  "fout_onduidelijk": 13,
+  "rewritten": 20,
+  "fout_ja": 9,
+  "kinds": {
+   "aanvulling": 50,
+   "schrapping": 10,
+   "tijd": 17,
+   "onzeker": 42,
+   "ordening": 1,
+   "gemengd": 29,
+   "inhoud": 23,
+   "formulering": 23,
+   "notatie": 1
+  },
+  "stories_with_kind": {
+   "aanvulling": 41,
+   "schrapping": 10,
+   "tijd": 16,
+   "onzeker": 38,
+   "ordening": 1,
+   "gemengd": 23,
+   "inhoud": 22,
+   "formulering": 20,
+   "notatie": 1
+  }
+ }
+}

@@ -1,0 +1,42 @@
+name: Monthly edit kinds
+
+on:
+  schedule:
+    - cron: "0 5 2 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monthly-edits
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6
+        with:
+          repository: oszuidwest/babbel-analyse
+          path: babbel-analyse
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Fetch the Babbel stories
+        env:
+          BABBEL_USERNAME: ${{ secrets.BABBEL_USERNAME }}
+          BABBEL_PASSWORD: ${{ secrets.BABBEL_PASSWORD }}
+        run: python3 babbel-analyse/fetch_all.py
+      - name: Sort the changes of the last three months
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python3 edits.py stories.json
+      - name: Commit the report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add report.json README.md
+          git diff --cached --quiet || { git commit -m "chore: monthly edit kinds report" && git pull --rebase && git push; }
